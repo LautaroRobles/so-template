@@ -14,11 +14,11 @@ CYAN=\033[0;36m
 RED=\033[0;31m
 NC=\033[0m
 
-# PWD
+# Obtenemos la path al proyecto
 PWD = $(shell pwd)
 # Carpeta donde se guardaran los modulos compilados
 BUILD_DIR = build
-# Carpeta donde se encuentra el modulo shared (archivos compartidos)
+# Carpeta donde se encuentra el modulo shared (biblioteca compartida)
 SHARED_DIR = shared
 # Link al repo de las commons
 COMMONS_REPO = https://github.com/sisoputnfrba/so-commons-library.git
