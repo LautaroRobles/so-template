@@ -17,7 +17,7 @@ NC=\033[0m
 # PWD
 PWD = $(shell pwd)
 # Carpeta donde se guardaran los modulos compilados
-BUILD_DIR = bin
+BUILD_DIR = build
 # Carpeta donde se encuentra el modulo shared (archivos compartidos)
 SHARED_DIR = shared
 # Link al repo de las commons
@@ -26,7 +26,7 @@ COMMONS_REPO = https://github.com/sisoputnfrba/so-commons-library.git
 # -I path donde se encuentran los include de shared
 # -L path donde se encuentra la bilbioteca shared compilada
 # -rpath deja marcado en el ejecutable la ubicacion de la biblioteca shared
-BUILD_PARAMS = -I$(PWD) -L$(PWD)/bin -Wl,-rpath=$(PWD)/bin -lcommons -lshared
+BUILD_PARAMS = -I$(PWD) -L$(PWD)/$(BUILD_DIR) -Wl,-rpath=$(PWD)/$(BUILD_DIR) -lcommons -lshared
 # Parametros para valgrind
 VALGRIND_PARAMS = -s --leak-check=full --track-origins=yes
 
@@ -123,7 +123,7 @@ uninstall-commons:
 	sudo rm -f /usr/lib/libcommons.so
 	sudo rm -rf /usr/include/commons
 
-#: Elimina los binarios compilados y los logs
+#: Elimina los ejecutables y la biblioteca compilada
 clean:
 	rm -rf $(BUILD_DIR)
 

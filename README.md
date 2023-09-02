@@ -1,6 +1,6 @@
 ## Quick Start
 
-Instalar las commons
+Instalar las commons (Biblioteca de la catedra)
 
 ```
 make install-commons
