@@ -5,7 +5,7 @@
             "name": "Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "bin/${input:modulo}",
+            "program": "build/${input:modulo}",
             "args": ["${input:parametros}"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
@@ -21,7 +21,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "additionalSOLibSearchPath": "${workspaceFolder}/bin"
+            "additionalSOLibSearchPath": "${workspaceFolder}/build"
         }
     ],
     "inputs": [
@@ -32,9 +32,10 @@
             "options": [
                 "cpu",
                 "kernel",
-                "testing"
+                "memoria",
+                "filesystem",
             ],
-            "default": "testing"
+            "default": "kernel"
         },
         {
             "id": "parametros",
